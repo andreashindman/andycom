@@ -1,0 +1,74 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    margin: auto;
+}
+.githubImageLink {
+    height: 10px;
+    width: 10px;
+    padding-left: 3px;
+}
+.contacts {
+    padding-bottom: 30px;
+}
+.languages {
+    color: grey;
+    font-style: italic;
+    font-size: 9px;
+}
+.contactSep {
+    padding: 5px;
+}
+.projectDesc {
+    max-width: 360px;
+    margin: auto;
+    padding-bottom: 30px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 11px;
+    color: dimgrey;
+}
+@media only screen and (max-width: 500px) { 
+    .contactSep { 
+	display: none; 
+    }
+}
+@media only screen and (min-width: 500px) { 
+    .contactBr { 
+	display: none; 
+    }
+}
+
+/* chart rules  */
+#title {
+    font-size: calc(100% + 1vw + 1vh);
+}
+#databtn {
+    margin: 10px;
+}
+.chart {
+    text-align: center;
+    display: flex;
+    margin: auto;
+}
+.chart text {
+    font: 10px sans-serif;
+}
+.axis text {
+    font: 10px sans-serif;
+}
+.axis path, .axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+@media screen and (max-width: 720px) {
+    .legend {
+	transform: translate(20px, 20px);
+	scale: 80%;
+	opacity: 50%;
+    }
+}
+#contribute-button {
+    margin-bottom: 100px;
+}
