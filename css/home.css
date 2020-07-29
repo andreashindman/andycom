@@ -30,16 +30,16 @@ body {
 }
 @media only screen and (max-width: 500px) { 
     .contactSep { 
-	display: none; 
+        display: none; 
     }
 }
 @media only screen and (min-width: 500px) { 
     .contactBr { 
-	display: none; 
+        display: none; 
     }
 }
 
-/* chart rules  */
+/* chart rules  
 #title {
     font-size: calc(100% + 1vw + 1vh);
 }
@@ -64,11 +64,12 @@ body {
 }
 @media screen and (max-width: 720px) {
     .legend {
-	transform: translate(20px, 20px);
-	scale: 80%;
-	opacity: 50%;
+    transform: translate(20px, 20px);
+    scale: 80%;
+    opacity: 50%;
     }
 }
 #contribute-button {
     margin-bottom: 100px;
 }
+*/

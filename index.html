@@ -52,7 +52,7 @@
         <a class="project" href="https://www.figma.com/proto/2BtfwFplP1ri1pDxcVaKnG/BoboZero?node-id=1%3A2&scaling=scale-down-width">🚧 bobozero.com</a>
         <a class="languages">Figma</a>
         <p class="projectDesc">
-            Under development! A souvenir and snack exchange for travelers. A wireframe built using Figma which details the user interaction with a website for connecting travelers who want to exchange gifts. 
+          Under development! A souvenir and snack exchange for travelers. A wireframe built using Figma which details the user interaction with a website for connecting travelers who want to exchange gifts. 
         </p>
       </div>
 
@@ -116,196 +116,195 @@
       </div>
 
     </div>
-    <script>
-      // retrieve data from external google sheet 
-      var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1i2VsyFFcLQb-wC1nzh8sIKp70_yrns7rvj-H9myBDtg/edit?usp=sharing';
+    <!-- <script>
+         // retrieve data from external google sheet 
+         var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1i2VsyFFcLQb-wC1nzh8sIKp70_yrns7rvj-H9myBDtg/edit?usp=sharing';
 
-      function init() {
-          Tabletop.init( { key: publicSpreadsheetUrl,
-                           callback: drawChart,
-                           simpleSheet: true } )
-      }      
-      
-      // set the dimensions and margins of the graph
-      var margin = {top: 120, right: 20, bottom: 90, left: 50},
-          width = 960 - margin.left - margin.right,
-          height = 500 - margin.top - margin.bottom;
+         function init() {
+         Tabletop.init( { key: publicSpreadsheetUrl,
+         callback: drawChart,
+         simpleSheet: true } )
+         }      
+         
+         // set the dimensions and margins of the graph
+         var margin = {top: 120, right: 20, bottom: 90, left: 50},
+         width = 960 - margin.left - margin.right,
+         height = 500 - margin.top - margin.bottom;
 
-      if (window.innerWidth < 960) {
-          width = window.innerWidth - 50 - margin.left - margin.right;
-      }
+         if (window.innerWidth < 960) {
+         width = window.innerWidth - 50 - margin.left - margin.right;
+         }
 
-      // set the ranges
-      var x = d3.scaleBand()
-          .range([0, width])
-          .padding(0.1);
-      var y = d3.scaleLinear()
-          .range([height, 0]);
-      
-      // append the svg object to the body of the page
-      // append a 'group' element to 'svg'
-      // moves the 'group' element to the top left margin
-      var svg = d3.select("body").append("svg")
-          .attr("class", "chart")
-          .attr("width", width + margin.left + margin.right)
-          .attr("height", height + margin.top + margin.bottom)
-          .append("g")
-          .attr("transform","translate(" + margin.left + "," + margin.top + ")");
-      
-      function drawChart(data, tabletop) {
-          
-          // data.forEach((x)=>type(x)); // coerce to number
-          names = getColumns(data); // get name columns
+         // set the ranges
+         var x = d3.scaleBand()
+         .range([0, width])
+         .padding(0.1);
+         var y = d3.scaleLinear()
+         .range([height, 0]);
+         
+         // append the svg object to the body of the page
+         // append a 'group' element to 'svg'
+         // moves the 'group' element to the top left margin
+         var svg = d3.select("body").append("svg")
+         .attr("class", "chart")
+         .attr("width", width + margin.left + margin.right)
+         .attr("height", height + margin.top + margin.bottom)
+         .append("g")
+         .attr("transform","translate(" + margin.left + "," + margin.top + ")");
+         
+         function drawChart(data, tabletop) {
+         
+         // data.forEach((x)=>type(x)); // coerce to number
+         names = getColumns(data); // get name columns
 
-          // for each of the names columns, compute the cumulative total 
-          computeCum(data, names);
+         // for each of the names columns, compute the cumulative total 
+         computeCum(data, names);
 
-          // last 30 days only
-          if (data.length > 30) {
-              data = data.slice(data.length - 30 , data.length);	      
-          }
+         // last 30 days only
+         if (data.length > 30) {
+         data = data.slice(data.length - 30 , data.length);	      
+         }
 
-          // scale the range of data in the domains
-          x.domain(data.map(function(d) { return d.date; }));
-          
-          var c = []; names.forEach((n) => c.push(Number(d3.max(data, function(d) { return d[n] }))));
-          y.domain([0, d3.max(c)]);
+         // scale the range of data in the domains
+         x.domain(data.map(function(d) { return d.date; }));
+         
+         var c = []; names.forEach((n) => c.push(Number(d3.max(data, function(d) { return d[n] }))));
+         y.domain([0, d3.max(c)]);
 
-          // color scale function
-          var colorScale = d3.scaleOrdinal().domain(names).range(d3.schemeTableau10);
+         // color scale function
+         var colorScale = d3.scaleOrdinal().domain(names).range(d3.schemeTableau10);
 
-          // color legend
-          var colorLegend = d3.legendColor()
-              .shape("circle")
-              .shapePadding(5)
-              .scale(colorScale);
-          
-          svg.append("g")
-              .attr("transform", function(d) { return "translate(30, 20)" })
-              .attr("class", "legend")
-              .call(colorLegend);
+         // color legend
+         var colorLegend = d3.legendColor()
+         .shape("circle")
+         .shapePadding(5)
+         .scale(colorScale);
+         
+         svg.append("g")
+         .attr("transform", function(d) { return "translate(30, 20)" })
+         .attr("class", "legend")
+         .call(colorLegend);
 
-          for (var i in names) {
-              svg.append("path")
-                  .datum(data)
-                  .attr("fill", "none")
-                  .attr("stroke", colorScale(names[i]))
-                  .attr("stroke-width", 3)
-                  .attr("d", d3.line() // .curve(d3.curveBasis)
-                        .x(function(d) { return x(d.date) + x.bandwidth() / 2 })
-                        .y(function(d) { return y(d[names[i]]) }));
+         for (var i in names) {
+         svg.append("path")
+         .datum(data)
+         .attr("fill", "none")
+         .attr("stroke", colorScale(names[i]))
+         .attr("stroke-width", 3)
+         .attr("d", d3.line() // .curve(d3.curveBasis)
+         .x(function(d) { return x(d.date) + x.bandwidth() / 2 })
+         .y(function(d) { return y(d[names[i]]) }));
 
-              svg.selectAll("circleMarkers")
-                  .data(data)
-                  .enter()
-                  .append("circle")
-                  .attr("fill", colorScale(names[i]))
-                  .attr("stroke", "none")
-                  .attr("cx", function(d) { return x(d.date) + x.bandwidth() / 2 })
-                  .attr("cy", function(d) { return y(d[names[i]]) } )
-                  .attr("r", 5)
-                  .attr("value", function(d) { return d[names[i]] } )
-                  .attr("name", names[i])
-                  .on("mouseover", handleMouseOver)
-                  .on("mouseout", handleMouseOut);
-          }
-          
-          // add the x axis
-          svg.append("g")
-              .attr("transform", "translate(0," + height + ")")
-              .call(d3.axisBottom(x))
-              .selectAll("text")
-              .style("text-anchor", "end")
-              .attr("dx", "-.8em")
-              .attr("dy", ".15em")
-              .attr("transform", function(d) {
-                  return "rotate(-65)" 
-              });
+         svg.selectAll("circleMarkers")
+         .data(data)
+         .enter()
+         .append("circle")
+         .attr("fill", colorScale(names[i]))
+         .attr("stroke", "none")
+         .attr("cx", function(d) { return x(d.date) + x.bandwidth() / 2 })
+         .attr("cy", function(d) { return y(d[names[i]]) } )
+         .attr("r", 5)
+         .attr("value", function(d) { return d[names[i]] } )
+         .attr("name", names[i])
+         .on("mouseover", handleMouseOver)
+         .on("mouseout", handleMouseOut);
+         }
+         
+         // add the x axis
+         svg.append("g")
+         .attr("transform", "translate(0," + height + ")")
+         .call(d3.axisBottom(x))
+         .selectAll("text")
+         .style("text-anchor", "end")
+         .attr("dx", "-.8em")
+         .attr("dy", ".15em")
+         .attr("transform", function(d) {
+         return "rotate(-65)" 
+         });
 
-          // add text label for x axis
-          /* svg.append("text")
-           .attr("transform", "translate(" + (width/2) + " , " + (height + margin.top + 10) +  ")")
-           .style("text-anchor", "middle")
-           .text("Date"); */
+         // add text label for x axis
+         // svg.append("text")
+         //  .attr("transform", "translate(" + (width/2) + " , " + (height + margin.top + 10) +  ")")
+         //  .style("text-anchor", "middle")
+         //  .text("Date"); 
 
-          // add the y axis
-          svg.append("g").call(d3.axisLeft(y));
+         // add the y axis
+         svg.append("g").call(d3.axisLeft(y));
 
-          // add text label for y axis
-          svg.append("text")
-              .attr("transform", "rotate(-90)")
-              .attr("y", 0 - margin.left)
-              .attr("x", 0 - (height / 2))
-              .attr("dy", "1em")
-              .style("text-anchor", "middle")
-              .style("font-size", "12px")
-              .text("Total Consumption (mg)");
-          
-          // add title
-          svg.append("text")
-              .attr("x", (width / 2))
-              .attr("y", 0 - (margin.top / 2))
-              .attr("text-anchor", "middle")
-              .style("font-size", "calc(10% + .5vw + .5vh)")
-              .text("Cumulative Caffeine Consumption Since " + data[0].date);
-      }
-      
-      
-      // returns columns that should be visualized
-      function getColumns(d) {
-          var c = []
-          for (var i in d[0]) {
-              if (!["date"].includes(i)) {
-                  c.push(i);
-              }
-          }
-          return c; 
-      }
+         // add text label for y axis
+         svg.append("text")
+         .attr("transform", "rotate(-90)")
+         .attr("y", 0 - margin.left)
+         .attr("x", 0 - (height / 2))
+         .attr("dy", "1em")
+         .style("text-anchor", "middle")
+         .style("font-size", "12px")
+         .text("Total Consumption (mg)");
+         
+         // add title
+         svg.append("text")
+         .attr("x", (width / 2))
+         .attr("y", 0 - (margin.top / 2))
+         .attr("text-anchor", "middle")
+         .style("font-size", "calc(10% + .5vw + .5vh)")
+         .text("Cumulative Caffeine Consumption Since " + data[0].date);
+         }
+         
+         
+         // returns columns that should be visualized
+         function getColumns(d) {
+         var c = []
+         for (var i in d[0]) {
+         if (!["date"].includes(i)) {
+         c.push(i);
+         }
+         }
+         return c; 
+         }
 
-      // compute the cumulative value for columns `n` in data `d`
-      function computeCum(d, n) {
-          for (var j in n) {
-              for (let i = 1; i < d.length; i++) {
-                  d[i][n[j]] = Number(d[i][n[j]]) + Number(d[i-1][n[j]]);
-              }
-          }
-      };
+         // compute the cumulative value for columns `n` in data `d`
+         function computeCum(d, n) {
+         for (var j in n) {
+         for (let i = 1; i < d.length; i++) {
+         d[i][n[j]] = Number(d[i][n[j]]) + Number(d[i-1][n[j]]);
+         }
+         }
+         };
 
-      function handleMouseOver(d, i) {
-          d3.select(this)
-              .attr("r", 7);
+         function handleMouseOver(d, i) {
+         d3.select(this)
+         .attr("r", 7);
 
-          var cx = d3.select(this).attr("cx");
-          var cy = d3.select(this).attr("cy");
-          var val = d3.select(this).attr("value");
-          var name = d3.select(this).attr("name");
-          
-          svg.append("text")
-              .attr("id", "tooltip")
-              .attr("x", cx - 70)
-              .attr("y", cy - 15)
-              .attr("fill", "grey")
-              .style("font-size", "14px")
-              .text(name + ": " + val + " mg");	
-      }
+         var cx = d3.select(this).attr("cx");
+         var cy = d3.select(this).attr("cy");
+         var val = d3.select(this).attr("value");
+         var name = d3.select(this).attr("name");
+         
+         svg.append("text")
+         .attr("id", "tooltip")
+         .attr("x", cx - 70)
+         .attr("y", cy - 15)
+         .attr("fill", "grey")
+         .style("font-size", "14px")
+         .text(name + ": " + val + " mg");	
+         }
 
-      function handleMouseOut(d, i) {
-          d3.select(this)
-              .attr("r", 5);
+         function handleMouseOut(d, i) {
+         d3.select(this)
+         .attr("r", 5);
 
-          var cx = d3.select(this).attr("cx");
-          var cy = d3.select(this).attr("cy");
+         var cx = d3.select(this).attr("cx");
+         var cy = d3.select(this).attr("cy");
 
-          d3.select("#tooltip").remove();
-      }
-      
+         d3.select("#tooltip").remove();
+         }
+         
 
-      init();
-      
-
-    </script>
+         init();
+         </script>
     <div id="contribute-button">
       <a href ="https://docs.google.com/spreadsheets/d/1i2VsyFFcLQb-wC1nzh8sIKp70_yrns7rvj-H9myBDtg/edit#gid=0">Contribute your own data</a>
-    </div>
+    </div> --> 
+
   </body>
 </html>
