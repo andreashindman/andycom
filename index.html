@@ -1,9 +1,9 @@
 <!doctype html>
-
 <html lang="en">
   <head>
     <title>Andreas' Site</title>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Andreas' Site">
     <meta name="author" content="Andreas">
 
@@ -22,101 +22,265 @@
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.js"></script> -->
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js"></script> -->
     
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
     <link rel="stylesheet" href="css/home.css?v=1.0">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
   </head>
   <body>
     
-    <h2>Andreas Hindman</h2>
-    <div class="contacts">
-      <a href="https://www.dropbox.com/s/h8qnd98eu0o6j8h/andreashresume.pdf?dl=0">resume</a>
-      <a class="contactSep">•</a>
-      <a href="https://www.linkedin.com/in/andreashindman/">linkedin.com/in/andreashindman</a><br class="contactBr">
-      <a class="contactSep">•</a>
-      <a href="https://github.com/andreashindman">github.com/andreashindman</a>
-      <a class="contactSep">•</a>
-      <a href="mailto:andreas.hindman@gmail.com?">andreas.hindman@gmail.com</a><br class="contactBr">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Andreas Hindman</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="https://www.dropbox.com/s/h8qnd98eu0o6j8h/andreashresume.pdf?dl=0">resume</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="https://www.linkedin.com/in/andreashindman/">linkedin.com/in/andreashindman</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="https://github.com/andreashindman">github.com/andreashindman</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="mailto:andreas.hindman@gmail.com?">andreas.hindman@gmail.com</a>
+          </li>
+        </ul>
+      </div>
+    </nav> 
+
+    <!-- <div class="projectContainer"> -->
+
+    <!--   <div> -->
+    <!--     <a class="project" href="http://chartsanywhere.com/">🚧 chartsanywhere.com</a> -->
+    <!--     <a class="languages">JavaScript/HTML/CSS, D3.js</a> -->
+    <!--     <a href="https://github.com/andreashindman/chartsanywhere"><img class="githubImageLink" src="./imgs/GitHub-Mark-64px.png" alt="text"></a> -->
+    <!--     <p class="projectDesc"> -->
+    <!--       Under development! A website for generating D3 charts and visualizations and embedding them anywhere. Accepts a google sheets URL and displays a visualization as well as the JavaScript required to embed a live visualization into your own website. Lots of features and options to be added in the future. -->
+    <!--     </p> -->
+    <!--   </div> -->
+
+    <!--   <div> -->
+    <!--     <a class="project" href="https://www.figma.com/proto/2BtfwFplP1ri1pDxcVaKnG/BoboZero?node-id=1%3A2&scaling=scale-down-width">🚧 bobozero.com</a> -->
+    <!--     <a class="languages">Figma</a> -->
+    <!--     <p class="projectDesc"> -->
+    <!--       Under development! A souvenir and snack exchange for travelers. A wireframe built using Figma which details the user interaction with a website for connecting travelers who want to exchange gifts.  -->
+    <!--     </p> -->
+    <!--   </div> -->
+
+    <!--   <div> -->
+    <!--     <a class="project" href="./projects/wisconsin-model/wisconsin-cancer-model.html">ML Notebook: Breast Cancer Classification</a> -->
+    <!--     <a class="languages">Python, R</a> -->
+    <!--     <a href="https://github.com/andreashindman/wisconsin-model"><img class="githubImageLink" src="./imgs/GitHub-Mark-64px.png" alt="text"></a> -->
+    <!--     <p class="projectDesc"> -->
+    <!--       A notebook describing my process for training different ML models to classify tumors as benign or malignant. Compares the effectiveness of kNN, LR, and SVC as -->
+    <!--       well as feature engineering and basic hyperparameter tuning using grid search for predicting binary outcomes.  -->
+    <!--     </p> -->
+    <!--   </div> -->
+
+    <!--   <div> -->
+    <!--     <a class="project" href="./projects/cawildfire-model/index.html">ML Notebook: California Wildfires</a> -->
+    <!--     <a class="languages">Python</a> -->
+    <!--     <a href="https://github.com/sjhangiani12/info370-final-project"><img class="githubImageLink" src="./imgs/GitHub-Mark-64px.png" alt="text"></a> -->
+    <!--     <p class="projectDesc"> -->
+    <!--       Research paper and a series of Jupyter notebooks describing our process for using a random forest machine -->
+    <!--       learning model to predict sizes of California wildfires. -->
+    <!--     </p> -->
+    <!--   </div> -->
+      
+    <!--   <div> -->
+    <!--     <a class="project" href="./projects/dengue-model/index.html">ML Notebook: Predicting Dengue Fever</a> -->
+    <!--     <a class="languages">Python</a> -->
+    <!--     <a href="https://github.com/andreashindman/dengue-model"><img class="githubImageLink" src="./imgs/GitHub-Mark-64px.png" alt="text"></a> -->
+    <!--     <p class="projectDesc"> -->
+    <!--       Notebook explaining a data science competition entry for predicting occurrences of dengue fever. The notebook -->
+    <!--       provides details on data wrangling, feature engineering, modeling, validation and visualization. -->
+    <!--     </p> -->
+    <!--   </div> -->
+
+    <!--   <div> -->
+    <!--     <a class="project" href="https://ischool.uw.edu/capstone/projects/2019/persistent-disease-self-management-program-online-application-help-people">Automated Health Survey System: Medicus</a> -->
+    <!--     <a class="languages">JavaScript, Vue, Python</a> -->
+    <!--     <a href="https://github.com/karanchoksi96/medicus"><img class="githubImageLink" src="./imgs/GitHub-Mark-64px.png" alt="text"></a> -->
+    <!--     <p class="projectDesc"> -->
+    <!--       Automated health survey system for 30+ chronic conditions, built for and used by the City of Seattle.   -->
+    <!--     </p> -->
+    <!--   </div> -->
+      
+    <!--   <div> -->
+    <!--     <a class="project" href="https://github.com/andreashindman/cube-learner">Q-Learning: Rubik's Cube</a> -->
+    <!--     <a class="languages">Python</a> -->
+    <!--     <a href="https://github.com/andreashindman/cube-learner"><img class="githubImageLink" src="./imgs/GitHub-Mark-64px.png" alt="text"></a> -->
+    <!--     <p class="projectDesc"> -->
+    <!--       A Rubik's Cube puzzle and an AI agent that can solve it using reinforcement learning (Q-learning), -->
+    <!--       both built using Python. -->
+    <!--     </p> -->
+    <!--   </div> -->
+      
+    <!--   <div> -->
+    <!--     <a class="project" href="./projects/waggle-dance/bienentanz.html">Visual Explanation: Waggle Dance</a> -->
+    <!--     <a class="languages">JavaScript, D3</a> -->
+    <!--     <a href="https://github.com/andreashindman/waggle-dance"><img class="githubImageLink" src="./imgs/GitHub-Mark-64px.png" alt="text"></a> -->
+    <!--     <p class="projectDesc"> -->
+    <!--       Interactive visual explanation of the honey bee's waggle dance. Follow this step-by-step guide to learn how -->
+    <!--       the honey bee encodes and communicates information about a nearby food source to the rest of her hive. -->
+    <!--     </p> -->
+    <!--   </div> -->
+
+    <!-- </div> -->
+
+    <div class="container">
+      <div class="card-deck mt-5">
+
+        <div class="card">
+          <a href="http://chartsanywhere.com/">
+            <img class="card-img-top" src="imgs/chartsanywhere-pic.png" alt="ChartsAnywhere picture" >
+          </a>
+          <div class="card-body">
+            <h5 class="card-title">🚧 ChartsAnywhere.com</h5>
+            <h6 class="card-subtitle mb-2 text-muted">JavaScript/HTML/CSS, D3.js</h6>
+            <p class="card-text">Under development! A website for generating D3 charts and visualizations and embedding them anywhere. Accepts a google sheets URL and displays a visualization as well as the JavaScript required to embed a live visualization into your own website. Lots of features and options to be added in the future.
+            </p>
+          </div>
+          <div class="card-footer">
+            <a href="http://chartsanywhere.com/" class="btn btn-primary">Website</a>
+            <a href="https://github.com/andreashindman/chartsanywhere" class="btn btn-primary">GitHub</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <a href="https://www.figma.com/proto/2BtfwFplP1ri1pDxcVaKnG/BoboZero?node-id=1%3A2&scaling=scale-down-width">
+            <img class="card-img-top" src="imgs/bobozero-pic.png" alt="BoboZero picture">
+          </a>
+          <div class="card-body">
+            <h5 class="card-title">🚧 BoboZero.com</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Figma</h6>
+            <p class="card-text">
+              Under development! A souvenir and snack exchange for travelers. A wireframe built using Figma which details the user interaction with a website for connecting travelers who want to exchange gifts.
+            </p>
+          </div>
+          <div class="card-footer">
+            <a href="https://www.figma.com/proto/2BtfwFplP1ri1pDxcVaKnG/BoboZero?node-id=1%3A2&scaling=scale-down-width" class="btn btn-primary">Demo</a>
+          </div>
+        </div>
+        
+        <div class="card">
+          <a href="">
+            <img class="card-img-top" src="imgs/clickgame-pic.png" alt="ClickGame picture">
+          </a>
+          <div class="card-body">
+            <h5 class="card-title">Bubble Game</h5>
+            <h6 class="card-subtitle mb-2 text-muted">JavaScript/HTML/CSS</h6>
+            <p class="card-text">A simple browser game that tests your mouse dexterity. Click each bubble before it pops. If you miss three, you lose! Keep it up for as long as possible to maximize your score.</p>
+          </div>
+          <div class="card-footer">
+            <a href="./projects/clickgame/clickgame.html" class="btn btn-primary">Website</a>
+            <a href="https://github.com/andreashindman/clickgame" class="btn btn-primary">GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-deck mb-5 mt-sm-5">
+        <div class="card">
+          <a href="./projects/wisconsin-model/wisconsin-cancer-model.html">
+            <img class="card-img-top" src="imgs/wisconsindata-pic.png" alt="Wisconsindata picture">
+          </a>
+          <div class="card-body">
+            <h5 class="card-title">ML Notebook: Breast Cancer Classification</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Python</h6>
+            <p class="card-text">A notebook describing my process for training different ML models to classify tumors as benign or malignant. Compares the effectiveness of kNN, LR, and SVC as well as feature engineering and basic hyperparameter tuning using grid search for predicting binary outcomes.</p>
+          </div>
+          <div class="card-footer">
+            <a href="./projects/wisconsin-model/wisconsin-cancer-model.html" class="btn btn-primary">Notebook</a>
+            <a href="https://github.com/andreashindman/wisconsin-model" class="btn btn-primary">GitHub</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <a href="./projects/cawildfire-model/index.html">
+            <img class="card-img-top" src="imgs/wildfire-pic.png" alt="Wildfires paper picture">
+          </a>
+          <div class="card-body">
+            <h5 class="card-title">ML Notebook: California Wildfires</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Python</h6>
+            <p class="card-text">Research paper and a series of Jupyter notebooks describing our process for using a random forest machine learning model to predict sizes of California wildfires.</p>
+          </div>
+          <div class="card-footer">
+            <a href="./projects/cawildfire-model/index.html" class="btn btn-primary">Paper</a>
+            <a href="https://github.com/sjhangiani12/info370-final-project" class="btn btn-primary">GitHub</a>
+          </div>
+        </div>
+        
+        <div class="card">
+          <a href="./projects/dengue-model/index.html">
+            <img class="card-img-top" src="imgs/dengue-pic.png" alt="Card image cap">
+          </a>
+          <div class="card-body">
+            <h5 class="card-">ML Notebook: Predicting Dengue Fever</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Python</h6>
+            <p class="card-text">Notebook explaining a data science competition entry for predicting occurrences of dengue fever. The notebook provides details on data wrangling, feature engineering, modeling, validation and visualization.</p>
+          </div>
+          <div class="card-footer">
+            <a href="./projects/dengue-model/index.html" class="btn btn-primary">Notebook</a>
+            <a href="https://github.com/andreashindman/dengue-model" class="btn btn-primary">GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-deck mb-5 mt-sm-5">
+        <div class="card">
+          <a href="https://ischool.uw.edu/capstone/projects/2019/persistent-disease-self-management-program-online-application-help-people">
+            <img class="card-img-top" src="imgs/medicus-pic.png" alt="Card image cap">
+          </a>
+          <div class="card-body">
+            <h5 class="card-title">Automated Health Survey System: Medicus</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Python, JavaScript/HTML/CSS, Vue.js</h6>
+            <p class="card-text">Automated health survey system for 30+ chronic conditions, built for and used by the City of Seattle.</p>
+          </div>
+          <div class="card-footer">
+            <a href="https://ischool.uw.edu/capstone/projects/2019/persistent-disease-self-management-program-online-application-help-people" class="btn btn-primary">Info</a>
+            <a href="https://github.com/karanchoksi96/medicus" class="btn btn-primary">GitHub</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <a href="https://github.com/andreashindman/cube-learner">
+            <img class="card-img-top" src="imgs/qlearning-pic.png" alt="Card image cap">
+          </a>
+          <div class="card-body">
+            <h5 class="card-title">Q-Learning: Rubik's Cube</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Python</h6>
+            <p class="card-text">A Rubik's Cube puzzle and an AI agent that can solve it using reinforcement learning (Q-learning), both built using Python.</p>
+          </div>
+          <div class="card-footer">
+            <a href="https://github.com/andreashindman/cube-learner" class="btn btn-primary">GitHub</a>
+          </div>
+        </div>
+        
+        <div class="card">
+          <a href="./projects/waggle-dance/bienentanz.html">
+            <img class="card-img-top" src="imgs/waggledance-pic.png" alt="Card image cap">
+          </a>
+          <div class="card-body">
+            <h5 class="card-title">Visual Explanation: Waggle Dance</h5>
+            <h6 class="card-subtitle mb-2 text-muted">JavaScript/HTML/CSS, D3.js</h6>
+            <p class="card-text">Interactive visual explanation of the honey bee's waggle dance. Follow this step-by-step guide to learn how the honey bee encodes and communicates information about a nearby food source to the rest of her hive.</p>
+          </div>
+          <div class="card-footer">
+            <a href="./projects/waggle-dance/bienentanz.html" class="btn btn-primary">Website</a>
+            <a href="https://github.com/andreashindman/waggle-dance" class="btn btn-primary">GitHub</a>
+          </div>
+        </div>
+
+      </div>
+
     </div>
     
-    <div class="projectContainer">
-
-      <div>
-        <a class="project" href="http://chartsanywhere.com/">🚧 chartsanywhere.com</a>
-        <a class="languages">JavaScript, D3</a>
-        <a href="https://github.com/andreashindman/chartsanywhere"><img class="githubImageLink" src="./imgs/GitHub-Mark-64px.png" alt="text"></a>
-        <p class="projectDesc">
-          Under development! A website for generating D3 charts and visualizations and embedding them anywhere. Accepts a google sheets URL and displays a visualization as well as the JavaScript required to embed a live visualization into your own website. Lots of features and options to be added in the future.
-        </p>
-      </div>
-
-      <div>
-        <a class="project" href="https://www.figma.com/proto/2BtfwFplP1ri1pDxcVaKnG/BoboZero?node-id=1%3A2&scaling=scale-down-width">🚧 bobozero.com</a>
-        <a class="languages">Figma</a>
-        <p class="projectDesc">
-          Under development! A souvenir and snack exchange for travelers. A wireframe built using Figma which details the user interaction with a website for connecting travelers who want to exchange gifts. 
-        </p>
-      </div>
-
-      <div>
-        <a class="project" href="./projects/wisconsin-model/wisconsin-cancer-model.html">ML Notebook: Breast Cancer Classification</a>
-        <a class="languages">Python, R</a>
-        <a href="https://github.com/andreashindman/wisconsin-model"><img class="githubImageLink" src="./imgs/GitHub-Mark-64px.png" alt="text"></a>
-        <p class="projectDesc">
-          A notebook describing my process for training different ML models to classify tumors as benign or malignant. Compares the effectiveness of kNN, LR, and SVC as
-          well as feature engineering and basic hyperparameter tuning using grid search for predicting binary outcomes. 
-        </p>
-      </div>
-
-      <div>
-        <a class="project" href="./projects/cawildfire-model/index.html">ML Notebook: California Wildfires</a>
-        <a class="languages">Python</a>
-        <a href="https://github.com/sjhangiani12/info370-final-project"><img class="githubImageLink" src="./imgs/GitHub-Mark-64px.png" alt="text"></a>
-        <p class="projectDesc">
-          Research paper and a series of Jupyter notebooks describing our process for using a random forest machine
-          learning model to predict sizes of California wildfires.
-        </p>
-      </div>
-      
-      <div>
-        <a class="project" href="./projects/dengue-model/index.html">ML Notebook: Predicting Dengue Fever</a>
-        <a class="languages">Python</a>
-        <a href="https://github.com/andreashindman/dengue-model"><img class="githubImageLink" src="./imgs/GitHub-Mark-64px.png" alt="text"></a>
-        <p class="projectDesc">
-          Notebook explaining a data science competition entry for predicting occurrences of dengue fever. The notebook
-          provides details on data wrangling, feature engineering, modeling, validation and visualization.
-        </p>
-      </div>
-
-      <div>
-        <a class="project" href="https://ischool.uw.edu/capstone/projects/2019/persistent-disease-self-management-program-online-application-help-people">Automated Health Survey System: Medicus</a>
-        <a class="languages">JavaScript, Vue, Python</a>
-        <a href="https://github.com/karanchoksi96/medicus"><img class="githubImageLink" src="./imgs/GitHub-Mark-64px.png" alt="text"></a>
-        <p class="projectDesc">
-          Automated health survey system for 30+ chronic conditions, built for and used by the City of Seattle.  
-        </p>
-      </div>
-      
-      <div>
-        <a class="project" href="https://github.com/andreashindman/cube-learner">Q-Learning: Rubik's Cube</a>
-        <a class="languages">Python</a>
-        <a href="https://github.com/andreashindman/cube-learner"><img class="githubImageLink" src="./imgs/GitHub-Mark-64px.png" alt="text"></a>
-        <p class="projectDesc">
-          A Rubik's Cube puzzle and an AI agent that can solve it using reinforcement learning (Q-learning),
-          both built using Python.
-        </p>
-      </div>
-      
-      <div>
-        <a class="project" href="./projects/waggle-dance/bienentanz.html">Visual Explanation: Waggle Dance</a>
-        <a class="languages">JavaScript, D3</a>
-        <a href="https://github.com/andreashindman/waggle-dance"><img class="githubImageLink" src="./imgs/GitHub-Mark-64px.png" alt="text"></a>
-        <p class="projectDesc">
-          Interactive visual explanation of the honey bee's waggle dance. Follow this step-by-step guide to learn how
-          the honey bee encodes and communicates information about a nearby food source to the rest of her hive.
-        </p>
-      </div>
-
-    </div>
+    
     <!-- <script>
          // retrieve data from external google sheet 
          var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1i2VsyFFcLQb-wC1nzh8sIKp70_yrns7rvj-H9myBDtg/edit?usp=sharing';
@@ -307,5 +471,10 @@
       <a href ="https://docs.google.com/spreadsheets/d/1i2VsyFFcLQb-wC1nzh8sIKp70_yrns7rvj-H9myBDtg/edit#gid=0">Contribute your own data</a>
     </div> --> 
 
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   </body>
 </html>

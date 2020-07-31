@@ -1,0 +1,21 @@
+.target-container {
+    position: absolute;
+}
+
+.target {
+    fill: skyblue;
+    stroke: gray;
+    stroke-width: 2px;
+    /* animation: expandTarget 1s ease-in; */
+    /* animation-fill-mode: forwards; */
+}
+
+.target:hover {
+    stroke: green;
+    stroke-width: 3px;
+}
+
+@keyframes expandTarget {
+    0% { r:0%; }
+    100% { r: 45%; }
+} 
