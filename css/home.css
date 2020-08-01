@@ -51,6 +51,11 @@
 .intro-column {
     float: left;
     width: 63%;
+    font-size: 1.2em;
+}
+
+.navbar-brand {
+    font-size: 30px;
 }
 
 #intro-img {
@@ -71,14 +76,12 @@
   clear: both;
 }
 
-@media screen and (max-width:991px) {
+@media screen and (max-width:871px) {
     .intro-column {
         width: 100%;
     }
     #intro-img {
-        float: none;
-        display: block;
-        margin: auto;
+        display: none;
     }
 }
 
