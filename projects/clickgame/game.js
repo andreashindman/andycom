@@ -20,19 +20,30 @@ var body = document.body;
 
 // keep count of strikes 
 var strikes = 0;
+var score = 0;
 
 // handle targets when they're clicked
 body.onclick = function(event) {
-    if (event.target.classList.contains("target")) {
-        // remove target 
-        event.target.parentElement.remove();
-        console.log(strikes);
-    } else if (event.target.classList.contains("obstacle")) {
-        // remove obstacle
-        event.target.parentElement.remove();
-        // increment strikes 
-        ++strikes;
-        console.log(strikes);
+    if (strikes < 3) {
+        if (event.target.classList.contains("target")) {
+            // remove target 
+            event.target.parentElement.remove();
+            //update score
+            ++score;
+            document.getElementById("score").innerHTML = `<p>score: ${score}</p>`;
+            
+        } else if (event.target.classList.contains("obstacle")) {
+            // remove obstacle
+            event.target.parentElement.remove();
+            // increment strikes 
+            ++strikes;
+            document.getElementById("strikes").innerHTML += `<p id="strike-marker">&#10060</p>`;
+            console.log(strikes);
+            if (strikes >= 3) {
+                stopGame();
+                document.getElementById("gameover").innerHTML = "Game Over";
+            }
+        }
     }
 }
 
@@ -41,16 +52,26 @@ body.onclick = function(event) {
 function startGame() {
     // ensure targetInterval is not running: check for undefined or null
     if (!targetInterval) {
-        targetInterval = setInterval(addRandomTarget, 2000);
+        // remove existing targets and obstacles 
+        $(".target").remove();
+        $(".obstacle").remove();
+
+        targetInterval = setInterval(addRandomTarget, 700);
         startTimer();
     }
+
+    // reset game state 
+    strikes = 0;
+    score = 0;
+    document.getElementById("strikes").innerHTML = "";
+    document.getElementById("score").innerHTML = "";
+    document.getElementById("gameover").innerHTML = "";
 }
 
 // stop game and set interval ID, targetInterval, to null
 function stopGame() {
     clearInterval(targetInterval)
     targetInterval = null;
-
     // stop timer
     clearInterval(timerInterval);
 }
@@ -62,7 +83,7 @@ function addRandomTarget() {
     var targetType;
     
     // determine whether a target or an obstacle will be placed 
-    if (getRndDouble(0, 1) > 0.2) {
+    if (getRndDouble(0, 1) > 0.3) {
         targetType = "target";
     } else {
         targetType = "obstacle";
@@ -74,7 +95,7 @@ function addRandomTarget() {
 
 // get random double within range [min, max]
 function getRndDouble(min, max) {
-    return (Math.random() * (max - min)) + min
+    return (Math.random() * (max - min)) + min; 
 }
 
 // start (or restart) and display the game timer
