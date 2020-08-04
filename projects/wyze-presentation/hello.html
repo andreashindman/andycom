@@ -29,6 +29,8 @@
         <img src="images/andreas.jpg">
       </div>
       
+      <hr/>
+      
       <h1 class="title">Background</h1>
       <h2 class="title">Informatics graduate with specialization in data science</h2>
       <div id="logo-container">
@@ -37,7 +39,7 @@
       </div>
       
       <div id="class-list-container" style="max-width: 500px; margin: auto;">
-        <ul id="class-list" >
+        <ul id="class-list">
           <li><h4>Front-end & Server-side Development</h4></li>
           <li><h4>User Centered Design</h4></li>
           <li><h4>Advanced Database Design, Management, and Maintenance</h4></li>
@@ -45,13 +47,131 @@
         </ul>
       </div>
 
+      <hr/>
+
       <h1 class="title">Experience</h1>
       <h2 class="title">City of Seattle</h2>
       <h3 class="title" style="margin-bottom: 30px;">Software Engineering Intern</h3>
+      <h2 class="title" style="margin-bottom: 50px">Project outline</h2>
 
-      <h2 class="title">Project outline</h2>
+      <div class="text-container">
+        <h3>The Existing Solution:</h3>
+        <ul style="margin-bottom: 30px;">
+          <li><h4>Provides health information to help residents manage chronic conditions</h4></li>
+          <li><h4>Information is presented on a printed flyer</h4></li>
+        </ul>
+        <h3>Our Job:</h3>
+        <ul style="margin-bottom: 30px;">
+          <li><h4>Make the information more accessible by converting it into an easy to use interactive web site</h4></li>
+          <li><h4>Allow users to record and track symptoms over time to help when communicating with their doctors</h4></li>
+        </ul>
+      </div>
+      
+      <h3 class="title">Example</h3>
+      <div class="parent" id="persona-container" >
+        <div class="child" id="persona">
+            <img src="images/persona.png" height="175px" width="175px">
+        </div>
+        <div class="child">
+          <ul id="persona-info">
+            <li><h4>Name: Dale</h4></li>
+            <li><h4>Age: 72 years old</h4></li>
+            <li><h4>Location: Lives alone in Seattle, WA</h4></li>
+            <li><h4>Occupation: retired</h4></li>
+            <li><h4>Chronic conditions: diabetes, partial blindness</h4></li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 class="title">Problem</h3>
+      
+      <div class="text-container">
+        <h4>Dale has been feeling more tired than usual, and is worried about his health. He has the flier about his condition that he picked up the last time he visited the Aging and Disability Services offices in Seattle. He is confused by the information on the flyer. He has symptoms that are listed in more than one section on the flyer and after reading it, is still not sure if he should make an appointment with a doctor or if he should call 911.</h4>
+      </div>
+      <div class="image-container">
+        <img src="images/municipal-tower.png">
+        <img src="images/flyer.png">
+      </div>
+
+      <div class="text-container">
+        <h3>The problem we solved:</h3>
+        <ul style="margin-bottom: 30px;">
+          <li><h4>Users are not able to confidently select the optimal course of action based on the information they are presented.</h4></li>
+        </ul>
+        <h3>Solution:</h3>
+        <ul style="margin-bottom: 30px;">
+          <li><h4>Allow users to indicate the symptoms they are currently experiencing, and then present them with clear next steps to follow through an intuitive and accessible web application.</h4></li>
+        </ul>
+      </div>
+      
+      <h3 class="title">Implementation</h3>
+
+      <div class="image-container">
+        <img src="images/medicus-conditions.png">
+        <img src="images/medicus-select.png">
+        <img src="images/medicus-survey.png">
+        <img src="images/medicus-flag.png">
+      </div>
+      
+
+      <div class="text-container">
+        <h3>Technologies used:</h3>
+        <ul style="margin-bottom: 30px;">
+          <li><h4>JavaScript/HTML/CSS, Vue.js, Figma</h4></li>
+          <li><h4>Python, Golang, SQL Server</h4></li>
+          <li><h4>Docker, DigitalOcean</h4></li>
+        </ul>
+        <h3>Teamwork:</h3>
+        <ul style="margin-bottom: 30px;">
+          <li><h4>Daily standup meetings to discuss and divide tasks</h4></li>
+          <li><h4>Version control using git</h4></li>
+        </ul>
+        <h3>Customer interaction:</h3>
+        <ul style="margin-bottom: 30px;">
+          <li><h4>Design choices</h4></li>
+          <li><h4>Alternatives</h4></li>
+        </ul>
+        <h3>User studies</h3>
+        <ul style="margin-bottom: 30px;">
+          <li><h4>Design choices</h4></li>
+          <li><h4>Alternatives</h4></li>
+        </ul>
+        <h3>Key improvements:</h3>
+        <ul style="margin-bottom: 30px;">
+          <li><h4>Website is available online</h4></li>
+          <li><h4>No guesswork. After entering symptoms, user is presented with clear next steps to follow.</h4></li>
+          <li><h4>Track symptoms over time</h4></li>
+        </ul>
+      </div>
+
+      <!--
+          Technologies used: 
+          JavaScript/HTML/CSS Vue.js
+          Why we chose these: 
+          What were the alternatives: 
+
+          Teamwork
+          How we organized the work:
+          How we collaborated on code:
+          Problems we faced and how we solved them:
+
+          Customer interaction
+          Design choices:
+          Alternatives:
+
+          User studies
+          What we learned from users:
+          What we changed after getting feedback:
+
+          Key improvements:
+          Web site is available online
+          No guesswork. After entering symptoms, user is presented with clear next steps to follow.
+
+          Track symptoms over time.
+
+          Dale opens the web site and selects the page for his chronic condition - Diabetes. He selects the symptoms he is currently experiencing and clicks Submit. The symptoms are analyzed and Dale is given the recommendation to make an appointment with his doctor for further analysis. 
+        -->
     </div>
-
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
